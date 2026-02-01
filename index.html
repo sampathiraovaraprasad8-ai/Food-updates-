@@ -3,85 +3,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FoodWise – Party Ready Food App</title>
+<title>FoodWise – Smart Food & Party App</title>
+
 <style>
-/* ===== BASIC STYLES ===== */
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
 body{
   min-height:100vh;
   background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-             url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1470&q=80");
+  url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092");
   background-size:cover;background-attachment:fixed;color:#fff;
 }
 header{text-align:center;padding:25px}
-header h1{font-size:2.4rem;letter-spacing:1px;}
-header p{opacity:0.9;font-size:1rem;}
-.container{max-width:900px;margin:auto;background:rgba(255,255,255,.12);
-padding:25px;border-radius:20px;backdrop-filter:blur(12px);}
+header h1{font-size:2.4rem}
+header p{opacity:.9}
 
-/* ===== INPUTS & SUGGESTIONS ===== */
-label{font-size:.9rem;margin-top:10px;display:block;}
-input{width:100%;padding:12px;border-radius:10px;border:none;outline:none;margin-top:6px;font-size:1rem;}
-input[type=range]{accent-color:#ff9800;}
-.suggestions{background:#fff;color:#000;border-radius:10px;overflow:hidden;position:absolute;z-index:10;width:100%;}
-.suggestions div{padding:10px;cursor:pointer;}
+.container{
+  max-width:900px;margin:auto;
+  background:rgba(255,255,255,.12);
+  padding:25px;border-radius:20px;
+  backdrop-filter:blur(12px)
+}
+
+label{margin-top:10px;display:block}
+input{width:100%;padding:12px;border-radius:10px;border:none;margin-top:6px}
+input[type=range]{accent-color:#ff9800}
+
+.suggestions{
+  background:#fff;color:#000;
+  border-radius:10px;position:absolute;
+  z-index:10;width:100%
+}
+.suggestions div{padding:10px;cursor:pointer}
 .suggestions div:hover{background:#ffe0b2}
-.range-box span{font-weight:bold;}
 
-/* ===== RESTAURANTS CARDS ===== */
-.restaurants{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding:25px;}
-.card{background:rgba(255,255,255,.15);padding:20px;border-radius:18px;backdrop-filter:blur(10px);transition:.3s;cursor:pointer;position:relative;}
-.card:hover{transform:translateY(-8px);}
-.badge{background:#ff5722;padding:4px 10px;border-radius:20px;font-size:.75rem;display:inline-block;position:absolute;top:10px;right:10px;}
-.rating{color:gold;}
-button{width:100%;padding:12px;border:none;border-radius:12px;background:#ff9800;font-weight:bold;margin-top:10px;cursor:pointer;transition:.2s;font-size:1rem;}
-button:hover{background:#e68a00;}
+.range-box span{font-weight:bold}
 
-/* ===== DETAILS PAGE ===== */
-#details{display:none;padding:25px;}
-.details-card{max-width:500px;margin:auto;background:#fff;color:#000;padding:25px;border-radius:22px;box-shadow:0 0 15px rgba(0,0,0,.3);}
-.back{color:#ff9800;font-weight:bold;cursor:pointer;display:inline-block;margin-bottom:15px;}
-.details-card h2,h3{margin-bottom:10px;}
-
-/* ===== PARTY MODE SECTION ===== */
-.party-section{margin-top:20px;background:rgba(0,0,0,.1);padding:15px;border-radius:15px;color:#fff;}
-.party-section h3{margin-bottom:10px;color:#ffcc00;}
-.party-equipment{margin-top:10px;}
-.party-equipment div{margin:5px 0;padding:8px;background:rgba(255,255,255,.9);color:#000;border-radius:8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
-.party-equipment input{width:60px;padding:5px;border-radius:5px;border:1px solid #ccc;text-align:center;}
-
-/* ===== MEDIA QUERIES ===== */
-@media (max-width:768px){
-  header h1{font-size:2rem;}
-  header p{font-size:.95rem;}
-  .restaurants{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));padding:15px;}
-  .details-card{padding:20px;}
-  button{font-size:.95rem;padding:10px;}
-  .party-equipment div{flex-direction:column;align-items:flex-start;}
-  .party-equipment input{width:100%;margin-top:5px;}
+.restaurants{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;padding:25px
 }
 
-@media (max-width:480px){
-  header h1{font-size:1.7rem;}
-  header p{font-size:.9rem;}
-  .restaurants{grid-template-columns:1fr;padding:10px;}
-  .container{padding:15px;}
-  .details-card{padding:15px;}
-  button{font-size:.9rem;padding:8px;}
-  .party-section{padding:10px;}
+.card{
+  background:rgba(255,255,255,.15);
+  padding:20px;border-radius:18px;
+  transition:.3s;cursor:pointer;
+  position:relative
 }
+.card:hover{transform:translateY(-8px)}
+
+.badge{
+  background:#ff5722;padding:4px 10px;
+  border-radius:20px;font-size:.75rem;
+  position:absolute;top:10px;right:10px
+}
+
+.rating{color:gold}
+
+button{
+  width:100%;padding:12px;
+  border:none;border-radius:12px;
+  background:#ff9800;font-weight:bold;
+  margin-top:10px;cursor:pointer
+}
+
+#details{display:none;padding:25px}
+.details-card{
+  max-width:500px;margin:auto;
+  background:#fff;color:#000;
+  padding:25px;border-radius:22px
+}
+
+.back{color:#ff9800;font-weight:bold;cursor:pointer}
+
+.party-section{
+  margin-top:20px;background:rgba(0,0,0,.1);
+  padding:15px;border-radius:15px;color:#fff
+}
+
+.party-equipment div{
+  margin:5px 0;padding:8px;
+  background:#fff;color:#000;
+  border-radius:8px;
+  display:flex;justify-content:space-between
+}
+
+.party-equipment input{width:60px}
 </style>
 </head>
+
 <body>
 
 <header>
   <h1>🍽 FoodWise</h1>
-  <p>Food by grams • CCI • Party Mode</p>
+  <p>CCI • Delivery Time • Plates • Party Mode</p>
 </header>
 
 <div class="container">
   <label>📍 Location</label>
-  <input id="locInput" placeholder="Type location...">
+  <input id="locInput" placeholder="Select area in Guntur...">
   <div id="locSug" class="suggestions"></div>
 
   <label>🍛 Food</label>
@@ -89,9 +109,9 @@ button:hover{background:#e68a00;}
   <div id="foodSug" class="suggestions"></div>
 
   <div class="range-box">
-    <label>⚖ Quantity (grams)</label>
-    <input type="range" min="0" max="1000" step="1" value="0" id="qty">
-    <span id="qtyVal">0 g</span>
+    <label>⚖ Quantity</label>
+    <input type="range" min="0" max="1000" value="0" id="qty">
+    <span id="qtyVal">0 g (No plate)</span>
   </div>
 </div>
 
@@ -100,22 +120,29 @@ button:hover{background:#e68a00;}
 
 <script>
 // ---------- DATA ----------
-const locations=["Gachibowli","Madhapur","Hitech City","Kondapur","Kukatpally","Ameerpet","SR Nagar","Dilsukhnagar","LB Nagar","Secunderabad"];
+const locations=[
+  "Brodipet","Arundelpet","Lakshmipuram",
+  "Chuttugunta","Pattabhipuram",
+  "Nallapadu","Syamalanagar",
+  "Kothapet","Gorantla","Reddy Pet"
+];
+
 const foods=["Biryani","Pizza","Burger","Paneer","Fried Rice","Rolls"];
-const equipment=["Disposable Cups","Plates","Napkins","Serving Trays","Chafing Dishes","Ice Buckets","Beverage Dispensers"];
+
+const equipment=["Disposable Plates","Cups","Napkins","Serving Trays"];
 
 const restaurants=[];
 locations.forEach(loc=>{
   foods.forEach(food=>{
     for(let i=1;i<=3;i++){
       restaurants.push({
-        name:`${food} Point ${i}`,
+        name:`${food} Hub ${i}`,
         location:loc,
-        food:food,
+        food,
         rating:(4+Math.random()).toFixed(1),
         cci:(1.4+Math.random()*0.6).toFixed(2),
-        base:150+Math.floor(Math.random()*100),
         time:20+Math.floor(Math.random()*20)+" mins",
+        base:160+Math.random()*120,
         isNew:Math.random()>0.7
       });
     }
@@ -131,7 +158,19 @@ const list=document.getElementById("list");
 const details=document.getElementById("details");
 
 // ---------- RANGE ----------
-qty.oninput=()=>{qtyVal.innerText=qty.value+" g"; load();};
+qty.oninput=()=>{
+  const g=+qty.value;
+  let plate="",serves="";
+  if(g===0){plate="No plate"}
+  else if(g<=125){plate="Quarter Plate";serves="Serves 1"}
+  else if(g<=250){plate="Half Plate";serves="Serves 1–2"}
+  else if(g<=500){plate="Full Plate";serves="Serves 2–3"}
+  else if(g<=750){plate="1½ Plates";serves="Serves 3–4"}
+  else{plate="2 Plates";serves="Serves 4–5"}
+
+  qtyVal.innerText=`${g} g (${plate}) ${serves}`;
+  load();
+};
 
 // ---------- SUGGESTIONS ----------
 function showSuggestions(input,arr,box){
@@ -141,78 +180,80 @@ function showSuggestions(input,arr,box){
   arr.filter(x=>x.toLowerCase().includes(val)).forEach(x=>{
     const d=document.createElement("div");
     d.innerText=x;
-    d.onclick=()=>{
-      input.value=x;
-      box.innerHTML="";
-      load();
-    };
+    d.onclick=()=>{input.value=x;box.innerHTML="";load();}
     box.appendChild(d);
   });
 }
+
 locInput.oninput=()=>showSuggestions(locInput,locations,locSug);
 foodInput.oninput=()=>showSuggestions(foodInput,foods,foodSug);
 
-// ---------- LOAD RESTAURANTS ----------
+// ---------- LOAD ----------
 function load(){
   list.innerHTML="";
   details.style.display="none";
   list.style.display="grid";
-  const loc=locInput.value;
-  const food=foodInput.value;
-  const g=qty.value;
 
-  const match=restaurants.filter(r=>(!loc||r.location===loc)&&(!food||r.food===food));
-  if(match.length===0){list.innerHTML="<p style='grid-column:1/-1;text-align:center'>❌ Sorry, no hotels found here</p>";return;}
+  const match=restaurants.filter(r=>
+    (!locInput.value||r.location===locInput.value)&&
+    (!foodInput.value||r.food===foodInput.value)
+  );
+
+  if(match.length===0){
+    list.innerHTML="<p style='grid-column:1/-1;text-align:center'>❌ No restaurants found</p>";
+    return;
+  }
 
   match.forEach(r=>{
-    const price=Math.round(r.base/250*g);
+    const price=Math.round(r.base/250*qty.value);
     const card=document.createElement("div");
     card.className="card";
     card.onclick=()=>openDetails(r);
-    card.innerHTML=`${r.isNew?'<div class="badge">NEW</div>':''}
+    card.innerHTML=`
+      ${r.isNew?'<div class="badge">NEW</div>':''}
       <h3>${r.name}</h3>
       <p>📍 ${r.location}</p>
       <p class="rating">⭐ ${r.rating}</p>
       <p>📊 CCI: ${r.cci}</p>
+      <p>⏱ ${r.time}</p>
       <p>💰 ₹${price}</p>
       <button>View</button>`;
     list.appendChild(card);
   });
 }
 
-// ---------- DETAILS PAGE WITH PARTY MODE ----------
+// ---------- DETAILS ----------
 function openDetails(r){
-  const g=qty.value;
+  const g=+qty.value;
   const price=Math.round(r.base/250*g);
   list.style.display="none";
   details.style.display="block";
 
-  let partyHTML=equipment.map(e=>{
-    return `<div>
-      <span>${e}</span>
-      <input type="number" min="0" value="0" id="qty_${e.replace(/\s/g,'')}"> pcs
-    </div>`;
-  }).join("");
+  let partyHTML=equipment.map(e=>
+    `<div>${e}<input type="number" id="qty_${e.replace(/\s/g,'')}" value="0"></div>`
+  ).join("");
 
-  details.innerHTML=`<div class="details-card">
+  details.innerHTML=`
+  <div class="details-card">
     <span class="back" onclick="load()">← Back</span>
     <h2>${r.food}</h2>
     <h3>${r.name}</h3>
     <p>📍 ${r.location}</p>
     <p>⭐ ${r.rating}</p>
     <p>📊 CCI: ${r.cci}</p>
-    <p>⏱ ${r.time}</p>
+    <p>⏱ Delivery: ${r.time}</p>
     <p>⚖ ${g} g</p>
+    ${g>=750?'<p style="color:#ff5722;font-weight:bold">🎉 Party Combo Recommended</p>':''}
     <p>💰 ₹${price}</p>
 
-    <button onclick="alert('Food added to cart!')">Add to Cart</button>
+    <button>Add to Cart</button>
 
     <div class="party-section">
       <button id="showParty">🎉 Party Mode</button>
-      <div id="partyItems" style="display:none;">
+      <div id="partyItems" style="display:none">
         <h3>Party Items</h3>
         <div class="party-equipment">${partyHTML}</div>
-        <button onclick="addPartyBundle()">Add Party Bundle to Cart</button>
+        <button onclick="alert('Party bundle added!')">Add Party Bundle</button>
       </div>
     </div>
   </div>`;
@@ -220,20 +261,18 @@ function openDetails(r){
   document.getElementById("showParty").onclick=()=>{
     const p=document.getElementById("partyItems");
     p.style.display=p.style.display==="none"?"block":"none";
-  }
-}
-
-// ---------- PARTY BUNDLE LOGIC ----------
-function addPartyBundle(){
-  const quantities={};
-  equipment.forEach(e=>{
-    const val=document.getElementById("qty_"+e.replace(/\s/g,'')).value;
-    quantities[e]=val;
-  });
-  alert("Party bundle added!\n"+JSON.stringify(quantities,null,2));
+    let people=g<=250?2:g<=500?3:g<=750?4:5;
+    equipment.forEach(e=>{
+      const el=document.getElementById("qty_"+e.replace(/\s/g,''));
+      if(e.includes("Plate")||e.includes("Cup")) el.value=people;
+      if(e.includes("Napkin")) el.value=people*2;
+      if(e.includes("Tray")) el.value=Math.ceil(people/2);
+    });
+  };
 }
 
 load();
 </script>
+
 </body>
 </html>
